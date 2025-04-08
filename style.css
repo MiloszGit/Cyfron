@@ -60,7 +60,6 @@ footer{
 }
 .socialIcons{
     display: flex;
-    padding: 10px;
     text-align: center;
     font-family: "Sixtyfour Convergence", sans-serif;
     position: absolute;
@@ -113,6 +112,7 @@ footer{
     color: #212121;
     background-color: #000;
     padding: 45px;
+    margin-top: 150px; /* Przesunięcie w górę */
     font-family: "Nunito", sans-serif;
     text-align: center;
 }
@@ -504,3 +504,4 @@ menu-container {
 .select{
     font-family: "Nunito", sans-serif;
 }
+
