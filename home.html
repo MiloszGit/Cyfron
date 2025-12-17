@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 
 <head>
     <div id="title">
@@ -28,7 +27,6 @@
 
     <div class="hero">
         <nav>
-
             <div class="contex">
                 <div class="menu-container">
                     <div class="hamburger" onclick="togglMenu()">
@@ -57,24 +55,24 @@
                 <div class="sub-menu">
                     <div class="user-info">
                         <img src="img/user/people.svg">
-                        <h2>User</h2>
+                        <h2 id="userName">User</h2>
                     </div>
 
                     <hr>
 
                     <a href="settings.html" class="sub-menu-link">
                         <img src="img/settings.svg">
-                        <p>Settings & Privacy</p>
+                        <p id="menuSettings">Settings & Privacy</p>
                     </a>
 
                     <a href="help.html" class="sub-menu-link">
                         <img src="img/help.svg">
-                        <p>Help & Support</p>
+                        <p id="menuHelp">Help & Support</p>
                     </a>
 
                     <a href="index.html" class="sub-menu-link">
                         <img src="img/logout.svg">
-                        <p>logout</p>
+                        <p id="menuLogout">Logout</p>
                     </a>
 
                 </div>
@@ -84,14 +82,14 @@
 
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="Class1/Class1.html">Class 1</a></li>
-            <li><a href="Class2/Class2.html">Class 2</a></li>
-            <li><a href="Class3/Class3.html">Class 3</a></li>
-            <li><a href="Class4/Class4.html">Class 4</a></li>
-            <li><a href="Class5/Class5.html">Class 5</a></li>
-            <li><a href="Class6/Class6.html">Class 6</a></li>
-            <li><a href="Class7/Class7.html">Class 7</a></li>
-            <li><a href="Class8/Class8.html">Class 8</a></li>
+            <li><a href="Class1/Class1.html" id="class1">Class 1</a></li>
+            <li><a href="Class2/Class2.html" id="class2">Class 2</a></li>
+            <li><a href="Class3/Class3.html" id="class3">Class 3</a></li>
+            <li><a href="Class4/Class4.html" id="class4">Class 4</a></li>
+            <li><a href="Class5/Class5.html" id="class5">Class 5</a></li>
+            <li><a href="Class6/Class6.html" id="class6">Class 6</a></li>
+            <li><a href="Class7/Class7.html" id="class7">Class 7</a></li>
+            <li><a href="Class8/Class8.html" id="class8">Class 8</a></li>
         </ul>
     </nav>
     </div>
@@ -103,44 +101,33 @@
         <h1>Cyfronex</h1>
     </div>
 
-    <div class="contex">
-        <div id="content">ładowanie danych</div>
-    </div>
+    <select id="lang">
+        <option value="pl" data-flag="🇵🇱">Polski</option>
+        <option value="en" data-flag="🇬🇧">English</option>
+        <option value="de" data-flag="🇩🇪">Deutsch</option>
+    </select>
 
-    <script>src = "script2.js"</script>
+    <div class="contex">
+        <div id="content">data loading</div>
+    </div>
 
     <div class="buycoffe">
-        <h1>Buy us a coffee</h1>
-        <button><a href="https://ko-fi.com/Cyfronex"><img src="img/caffe.svg"></a></button>
+        <h1 id="buyCoffee">Buy us a coffee</h1>
+        <button>
+            <a href="https://ko-fi.com/Cyfronex">
+                <img src="img/caffe.svg">
+            </a>
+        </button>
     </div>
+
 
     <div>
         <footer>
             <div class="footerBottom">
-                <p>Copyright &copy;2024 <span class="designer">Radosław Mazur Miłosz Biniek</span></p>
+                <p>Copyright &copy;2025 <span class="designer">Radosław Mazur Miłosz Biniek</span></p>
             </div>
     </div>
     </footer>
-
-    <script>
-        // Pobieranie danych z pliku en.json
-        fetch('en.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Błąd HTTP: ${response.status}`);
-                }
-                return response.json(); // Parsowanie JSON-a do obiektu
-            })
-            .then(data => {
-                // Wstawienie danych z JSON do elementu HTML
-                const contentDiv = document.getElementById('content');
-                contentDiv.textContent = data.message; // Wyświetlenie klucza "message"
-            })
-            .catch(error => {
-                console.error('Błąd podczas ładowania JSON:', error);
-                document.getElementById('content').textContent = "Nie udało się załadować danych.";
-            });
-    </script>
 
     <script>
 
@@ -153,7 +140,7 @@
         }
 
     </script>
-
+    <script src="load_lang.js"></script>
 </body>
 
 </html>
